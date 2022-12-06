@@ -1,0 +1,12 @@
+kubect get namespaces
+kubectl get nodes -o wide
+
+kubectl get deployments,pods -n azure-arc #view azure-arc deployments
+
+kubectl port-forward service/consul-server -n consul 8500:8500 #to access consul UI
+
+kubectl port-forward service/azure-vote-front -n azure-vote 80:80 #to access azure-vote web app
+kubectl get deployments,pods,services -n azure-vote #get information on azure-vote
+kubectl describe deployments -n azure-vote
+
+kubectl get serviceaccount admin-user -o jsonpath='{$.secrets[0].name}'
